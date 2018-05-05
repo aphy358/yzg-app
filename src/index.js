@@ -7,13 +7,17 @@ import registerServiceWorker from './registerServiceWorker';
 
 
 // React component
-class Counter extends Component {
+@connect(
+    state => ({value: state.count}),
+    dispatch => ({onIncreaseClick: () => dispatch(increaseAction)})
+)
+class App extends Component {
   render() {
     const { value, onIncreaseClick } = this.props
     return (
       <div>
         <span>{value}</span>
-        <button onClick={onIncreaseClick}>Increase</button>
+        <button onClick={onIncreaseClick}>增加</button>
       </div>
     )
   }
@@ -35,26 +39,6 @@ function counter(state = { count: 0 }, action) {
 
 // Store
 const store = createStore(counter)
-
-// Map Redux state to component props
-function mapStateToProps(state) {
-  return {
-    value: state.count
-  }
-}
-
-// Map Redux actions to component props
-function mapDispatchToProps(dispatch) {
-  return {
-    onIncreaseClick: () => dispatch(increaseAction)
-  }
-}
-
-// Connected Component
-const App = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Counter)
 
 ReactDOM.render(
   <Provider store={store}>
