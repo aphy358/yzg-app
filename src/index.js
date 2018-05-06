@@ -7,7 +7,6 @@ import registerServiceWorker from './registerServiceWorker';
 import App from './pages/first'
 import rootReducer from './reducers'
 
-// Store
 const store = createStore(rootReducer)
 
 ReactDOM.render(
