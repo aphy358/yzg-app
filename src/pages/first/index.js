@@ -9,7 +9,10 @@ import { increaseAction } from '../../actions/first'
     state => ({value: state.counter.count}),
     dispatch => ({onIncreaseClick: () => dispatch(increaseAction())})
 )
-export default class App extends Component {
+export default class First extends Component {
+  componentDidMount(){
+  }
+
   render() {
     const { value, onIncreaseClick } = this.props
     return (

@@ -2,13 +2,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import registerServiceWorker from './registerServiceWorker';
-import App from './pages/first'
 import store from './store'
+import Routes from './routes'
+import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Routes />
   </Provider>,
   document.getElementById('root')
 )
