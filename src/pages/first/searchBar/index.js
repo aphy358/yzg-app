@@ -2,10 +2,11 @@
 import React, { Component } from 'react'
 
 import './searchBar.scss'
-import { Cascader } from 'antd'
+import { Cascader, DatePicker } from 'antd'
 import { options } from './region'
+import moment from 'moment';
 
-import DateRange from '../../../components/DateRange'
+const RangePicker = DatePicker.RangePicker;
 
 export default class SearchBar extends Component {
   componentDidMount(){
@@ -15,7 +16,9 @@ export default class SearchBar extends Component {
     return (
         <div className="search-bar-wrap">
             <Cascader options={options} placeholder="请选择地区" />
-            <DateRange />
+            <RangePicker
+              ranges={{ Today: [moment(), moment()], 'This Month': [moment(), moment().endOf('month')] }}
+            />
         </div>
     )
   }
