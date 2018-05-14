@@ -23,6 +23,9 @@ react 项目搭建步骤：
 
 10、创建 reducers 文件夹，文件夹下创建 reducer 文件 first 和 index，普通 reducer 文件里可以引入 handleActions 以简化代码。index 里面引入 combineReducers 把所有 reducer 整合，再 export 出去。
 
+11、再接下来将 index.js 里的 <App/> 组件替换成路由 <Routes />，在根目录下新建 routes.js 文件，引入相关包 { Router, Route, IndexRoute } 等，这里用的是 react-router@3.2.1 的版本，然后是路由的布局，可以设置公共部分的页眉、页脚、nav等，然后页面内容展示在一个固定的位置，比如右边，通过路由的切换显示不同的页面内容( hashHistory.push(path) )。
+
+12、有时候会报一个 history 的错：Module not found: Can't resolve 'history/lib/createHashHistory' ，解决方案是安装： cnpm i history@3.2.1，如果版本太高也不行。其实 react-router 本来是自带这个包的，但是怎么搞也没用，只能另行安装了。
 
 
 
@@ -44,15 +47,3 @@ webpack.config.dev.js
 
 ES6学习(https://www.jianshu.com/p/287e0bb867ae) 
 
-整体流程：
-index.js
-        Provider
-
-        Routes
-                Router, Route, IndexRoute,    hashHistory
-                
-                对各个页面分开加载 require.ensure ，从而引出 pages 文件夹，里面都是被 connect 包装过的容器组件，
-                每个容器组件又引用相应的 action ，
-
-        store
-                引用 reducers。

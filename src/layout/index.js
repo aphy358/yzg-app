@@ -66,11 +66,11 @@ export default class layout extends Component {
 							onClick={this.toggle}
 						/>
 					</Header>
-					<Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
+					<Content style={{ background: '#fff', minHeight: 280 }}>
 						{children}
 					</Content>
 					<Footer style={{ textAlign: 'center' }}>
-						Ant Design ©2018 Created by JL-Tour front-end team
+						React Project ©2018 Created by JL-Tour front-end team
 					</Footer>
 				</Layout>
 			</Layout>
