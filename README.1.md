@@ -4,7 +4,7 @@ react 项目搭建步骤：
 
 1、先按照 Create React App 搭建好，然后运行 npm run eject，可以把配置项弹出到主目录一级，方便配置。
 
-2、安装插件 cnpm run install，再安装自己需要的其他插件：less-loader、node-sass、react-redux、react-router、react-router-redux、redux、redux-actions、redux-thunk、sass-loader、antd 等等。安装 antd 需要引入样式：import 'antd/dist/antd.css'; 
+2、安装插件 cnpm install，再安装自己需要的其他插件：less-loader、node-sass、react-redux、react-router、react-router-redux、redux、redux-actions、redux-thunk、sass-loader、antd 等等。安装 antd 需要引入样式：import 'antd/dist/antd.css'; 
 
 3、分别在 webpack.config.dev.js、webpack.config.prod.js 里面配置好 less-loader、sass-loader 等选项。
 
